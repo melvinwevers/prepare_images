@@ -6,7 +6,7 @@ import progressbar
 
 def crop_biggest(imgPath, outPath, threshold = 50):
     img = cv2.imread(imgPath, 1)
-    file_name = os.path.basename(imgPath)
+    file_name = os.path.basename(imgPath)[:-4]
     rgbimg = cv2.cvtColor(img, cv2.COLOR_HSV2RGB)
     image_gray = cv2.cvtColor(rgbimg, cv2.COLOR_BGR2GRAY)
     _,threshold = cv2.threshold(image_gray, threshold, 255,0)
