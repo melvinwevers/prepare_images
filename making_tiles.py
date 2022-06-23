@@ -3,7 +3,7 @@ import cv2
 import os
 import glob
 
-img_path = '/Users/melvinwevers/Sync/Work/data/atlas_der_nederlanden/data/*.jpg'
+img_path = '/Users/melvinwevers/Downloads/wetransfer_ubakzl12a5_008-jpg_2022-01-17_0858/*.jpg'
 
 
 def make_tile(img, filename_, n_rows, n_cols):
@@ -24,6 +24,7 @@ for img in imgs:
     print(img)
     filename = os.path.basename(img)
     img = cv2.imread(img)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) #make greyscale
     make_tile(img, filename, 4, 4)
 
 
